@@ -1,0 +1,12 @@
+﻿body {
+	text-align: center;	
+}
+#gameboard 
+{
+	width: 150px;
+	margin:auto;
+	}
+
+img {
+	border: none;
+	}
