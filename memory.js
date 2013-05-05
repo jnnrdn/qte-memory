@@ -82,10 +82,22 @@
 
 						//om antalet uppvända par är lika med totalt antal par har man vunnit
 						if (memory.completedPairs == memory.imgPairs) {
-							window.confirm("Game Over, you won! \nYou made it in " + memory.numberOfTries + " tries");
-							location.reload();
-						 }
+							var x;
+							var r=confirm("Game Over, you won! \nYou made it in " + memory.numberOfTries + " tries. \n Play again?");
+							if (r==true)
+						  {
+								location.reload();
+						  }
+							else
+						  {
+								x="Tack för att du provade Q:te Memory!\nHa en fin dag.";
+								document.getElementById("info").innerHTML=x;
+						  }
 
+
+							//window.confirm("Game Over, you won! \nYou made it in " + memory.numberOfTries + " tries");
+							//location.reload();
+						 }
 					}
 				}
 			}
