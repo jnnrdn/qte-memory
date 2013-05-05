@@ -1,6 +1,5 @@
 ﻿var memory = {
 
-	
 	randomCards: null,
 	rows: 0,
 	cols: 0,
@@ -50,25 +49,25 @@
 		if (memory.completedPairs < memory.imgPairs && this.firstChild.className != "done") {
 
 			// om antalet öppna kort är mindre än två skall de "vändas", annars skall inget värde returneras
-			if (memory.numberOfOpenCards < 2) { 
-				this.firstChild.src = "" + randomCards[this.id] + ".png"; 
+			if (memory.numberOfOpenCards < 2) {
+				this.firstChild.src = "" + randomCards[this.id] + ".png";
 				memory.numberOfOpenCards += 1;
 
 				// sparar undan källan till första kortet i cardOne
 				if (memory.numberOfOpenCards == 1) {
-					memory.cardOne = this.firstChild.src;  
+					memory.cardOne = this.firstChild.src;
 					memory.numberOfTries += 1;
 				}
-				
+
 				//sparar undan källan till andra  kortet i cardTwo
-				if (memory.numberOfOpenCards == 2) { 
+				if (memory.numberOfOpenCards == 2) {
 					memory.cardTwo = this.firstChild.src;
 
 					//om första kortet inte är samma som andra kortet vänds de tillbaka efter 1s.
-					if (memory.cardOne != memory.cardTwo) {  
+					if (memory.cardOne != memory.cardTwo) {
 						setTimeout(memory.turnBackCards, 1000);
 					}
-					
+
 					else {  //om båda korten är lika tilldelas båda klassnamnet "done"
 						var imageArray = document.getElementsByTagName("img");
 						for (var i = 0; i < imageArray.length; i++) {
@@ -76,14 +75,15 @@
 								imageArray[i].className = "done";
 							}
 						}
-						
+
 						//numberOfOpenCards sätts om till 0 och öppna par räknas upp med ett
 						memory.numberOfOpenCards = 0;
 						memory.completedPairs += 1;
 
 						//om antalet uppvända par är lika med totalt antal par har man vunnit
-						if (memory.completedPairs == memory.imgPairs) { 
-							alert("Game Over, you won! \nYou made it in " + memory.numberOfTries + " tries");
+						if (memory.completedPairs == memory.imgPairs) {
+							window.confirm("Game Over, you won! \nYou made it in " + memory.numberOfTries + " tries");
+							location.reload();
 						 }
 
 					}
@@ -93,14 +93,14 @@
 		}
 
 	},
-	
+
 
 	turnBackCards: function() {
 
         //kollar igenom alla a-taggar, om någon har samma källa som cardOne
         //eller cardTwo "vänds" kortet tillbaka
 		var imageSource = document.getElementsByTagName("a");
-		for (var i = 0; i < imageSource.length; i++) { 
+		for (var i = 0; i < imageSource.length; i++) {
 			if (imageSource[i].firstChild.src == memory.cardOne || imageSource[i].firstChild.src == memory.cardTwo) {
 				imageSource[i].firstChild.src = "0.png";
 			}
