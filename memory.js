@@ -90,7 +90,7 @@
 						  }
 							else
 						  {
-								x="Tack för att du provade Q:te Memory!\nHa en fin dag.";
+								x="<p>Tack för att du provade Q:te Memory!\nHa en fin dag.</p><p><a href=\"index.html\">Jag ångrar mig, jag vill spela.</a></p>";
 								document.getElementById("info").innerHTML=x;
 						  }
 
