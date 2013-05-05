@@ -1,16 +1,17 @@
 ﻿body {
 	text-align: center;
+  padding-top: 20px;
 }
 #gameboard
 {
 	width: 150px;
 	margin:auto;
-	}
-
+}
 h1 {
   color: #00858C;
+  font-size: 3em;
   font-family: 'Oldenburg', cursive;
 }
 img {
 	border: none;
-	}
+}
