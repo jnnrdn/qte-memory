@@ -1,12 +1,16 @@
 ﻿body {
-	text-align: center;	
+	text-align: center;
 }
-#gameboard 
+#gameboard
 {
 	width: 150px;
 	margin:auto;
 	}
 
+h1 {
+  color: #00858C;
+  font-family: 'Oldenburg', cursive;
+}
 img {
 	border: none;
 	}
